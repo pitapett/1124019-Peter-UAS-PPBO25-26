@@ -1,0 +1,25 @@
+        // ==========================================================
+        // TEMPLATE 1: SORT BY NUMBER (e.g., Price, ID, Qty)
+        // ==========================================================
+        Collections.sort(list, new Comparator<YourObject>() {
+
+            @Override
+            public int compare(YourObject o1, YourObject o2) {
+                return Double.compare(o1.getValue(), o2.getValue());
+                // SWAP o1 and o2 for DESCENDING
+            }
+
+        });
+
+        // ==========================================================
+        // TEMPLATE 2: SORT BY STRING (e.g., Name, Category)
+        // ==========================================================
+        Collections.sort(list, new Comparator<YourObject>() {
+
+            @Override
+            public int compare(YourObject o1, YourObject o2) {
+                return o1.getName().compareTo(o2.getName());
+                // For Descending (Z-A), swap them:
+                // return o2.getName().compareTo(o1.getName());
+            }
+        });
