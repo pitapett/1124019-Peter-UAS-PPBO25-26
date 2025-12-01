@@ -25,11 +25,10 @@ public class DeviceController implements IDeviceController {
 
     @Override
     public ArrayList<Device> getSortedDeviceList() throws EmptyListException {
-        if (deviceList.isEmpty()) {
+        ArrayList<Device> dupeDeviceList = deviceList;
+        if (dupeDeviceList.isEmpty()) {
             throw new EmptyListException();
         }
-
-        ArrayList<Device> dupeDeviceList = deviceList;
 
         Collections.sort(dupeDeviceList, new Comparator<Device>() {
 
